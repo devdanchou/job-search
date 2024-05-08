@@ -1,32 +1,41 @@
-<div>
+<div class="button">
   <button
-    class="btn btn-primary btn-lg"
+    class="btn btn-primary btn-desc"
     routerLink="/jobs"
     >Back
   </button>
 </div>
-<ng-container *ngIf="job$ | async as job">
-  <img
-    class="company-logo"
-    [src]=job.companyLogo
-    [alt]=job.companyName>
-  <h1>{{job.title}}</h1>
-  <ng-container *ngFor="let type of job.types">
-    <button
-    class="btn btn-primary btn-desc"
-    >{{type}}
-    </button>
+  <ng-container *ngIf="job$ | async as job">
+    <div class="flex-container">
+      <div>
+        <img
+        class="company-logo"
+        [src]=job.companyLogo
+        [alt]=job.companyName>
+      </div>
+      <div class="margin">
+        <h1>{{job.title}}</h1>
+        <ng-container *ngFor="let type of job.types">
+          <button
+          class="btn btn-primary btn-desc"
+          >{{type}}
+          </button>
+        </ng-container>
+        <ng-container *ngFor="let industry of job.industries">
+          <button
+            class="btn btn-primary btn-desc"
+          >{{industry}}
+          </button>
+        </ng-container>
+      </div>
+    </div>
+      <div>
+        <p><b>Publish date:</b> {{job.publishDate | date: 'MM/dd/yyyy'}}</p>
+        <p><b>Location:</b> {{job.location}}</p>
+        <p><b>Reference:</b> {{job.reference}}</p>
+        <p><b>Description: </b><br></p>
+        <p [innerHTML]="job.description | safeHtml"></p>
+      </div>
   </ng-container>
-  <ng-container *ngFor="let industry of job.industries">
-    <button
-      class="btn btn-primary btn-desc"
-    >{{industry}}
-    </button>
-  </ng-container>
-  <p><b>Publish date:</b> {{job.publishDate | date: 'MM/dd/yyyy'}}</p>
-  <p><b>Location:</b> {{job.location}}</p>
-  <p><b>Reference:</b> {{job.reference}}</p>
-  <p><b>Description: </b><br></p>
-  <p [innerHTML]="job.description | safeHtml"></p>
-</ng-container>
+
 

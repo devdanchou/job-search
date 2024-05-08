@@ -1,5 +1,5 @@
 <div class="flex-container">
-  <div>
+  <div class="comp-logo">
   <img
     class="company-logo"
     [src]=job?.companyLogo
@@ -7,8 +7,9 @@
   >
   </div>
   <div class="col">
-    <p><a routerLink="/jobs/{{job?.id}}">{{job?.title}}</a></p>
-    <p>Company: {{job?.companyName}} <span>Reference: {{job?.reference}}</span></p>
+    <p><a [routerLink]="['/jobs', job.id]">{{job.title}}</a></p>
+    <p class="company-snippet">Company: {{job.companyName}}</p>
+    <p class="company-snippet">Reference: {{job.reference}}</p>
   </div>
   <div class="fav-icon">
     <span *ngIf="showFavoriteIcon"

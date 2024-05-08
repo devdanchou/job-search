@@ -10,12 +10,14 @@ p span {
 .company-logo {
   height: 125px;
   width: 125px;
+  padding-right: 1rem;
 }
 
 .fav-icon {
   text-align: center;
-  align-self: center;
-  margin-right: 50px;
+  /* margin-right: 20%; */
+  padding-left: 2%;
+  align-items: center;
 }
 
 a {
@@ -26,10 +28,30 @@ a {
 .flex-container {
   display: flex;
   align-items: center;
+  margin-left: 30%;
+  margin-bottom: 10px;
+  /* display: flex;
+  align-items: center;
   align-content: center;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
 .col {
-  flex: 0 1 auto;
+  width: auto;
+}
+
+.company-snippet {
+  display: flex;
+  flex-wrap: wrap;
+  width:525px
+}
+
+.comp-logo {
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.comp-logo img {
+  display: inline-block;
 }

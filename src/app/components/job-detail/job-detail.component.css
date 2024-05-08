@@ -1,8 +1,22 @@
 .company-logo {
   height: 125px;
   width: 125px;
+  padding-right: 15px;
 }
 .btn-desc {
   cursor: default;
+}
+
+.flex-container {
+  margin-left: 30%;
+}
+
+p {
+  margin-left: 30%;
+  width: 800px;
+}
+
+.button {
+  margin-left: 30%;
 }
 

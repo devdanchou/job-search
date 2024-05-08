@@ -1,0 +1,21 @@
+<div class="flex-container">
+  <div>
+  <img
+    class="company-logo"
+    [src]=job?.companyLogo
+    [alt]=job?.companyName
+  >
+  </div>
+  <div class="col">
+    <p><a routerLink="/jobs/{{job?.id}}">{{job?.title}}</a></p>
+    <p>Company: {{job?.companyName}} <span>Reference: {{job?.reference}}</span></p>
+  </div>
+  <div class="fav-icon">
+    <span *ngIf="showFavoriteIcon"
+      class="icon-star"
+      [id]="'star-' + job?.id"
+      [ngClass]="{active: job.favorited}"
+      (click)="onClickFavoriteIcon(job)">
+    </span>
+  </div>
+</div>

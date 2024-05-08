@@ -1,0 +1,10 @@
+<div *ngIf="favorites.length; else noFavmsg">
+  <ng-container *ngFor="let favorite of favorites">
+    <app-job-info [job]="favorite" [showFavoriteIcon]="showFavoriteIcon"></app-job-info>
+  </ng-container>
+</div>
+  <ng-template #noFavmsg>
+    <p>Please add a favorite job!</p>
+  </ng-template>
+
+

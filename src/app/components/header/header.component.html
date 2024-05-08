@@ -1,0 +1,29 @@
+<div>
+  <nav class="header-nav">
+    <div class="card-body">
+      <div class="card-title text-center text-white py-3">
+        <h1>Find your job</h1>
+      </div>
+      <div class="header-tab">
+        <ul class="text-center list-inline py-3 navbar">
+          <li
+            role="presentation"
+            routerLinkActive="active">
+            <button class="tab-style">
+              <a routerLink="/jobs">JOBS</a>
+            </button>
+          </li>
+          <li
+          role="presentation"
+          routerLinkActive="active">
+          <button class="tab-style">
+            <a routerLink="/favorites">FAVORITES</a>
+          </button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+

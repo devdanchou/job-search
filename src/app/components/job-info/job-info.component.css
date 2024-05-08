@@ -1,0 +1,35 @@
+p span {
+  padding-left: 5px;
+}
+
+.icon-star.active {
+  background-color: yellow;
+  fill: yellow;
+}
+
+.company-logo {
+  height: 125px;
+  width: 125px;
+}
+
+.fav-icon {
+  text-align: center;
+  align-self: center;
+  margin-right: 50px;
+}
+
+a {
+  color: white;
+  font-size: larger;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.col {
+  flex: 0 1 auto;
+}

@@ -1,0 +1,5 @@
+<div>
+    <div *ngFor="let job of jobs">
+      <app-job-info [job]="job" [showFavoriteIcon]="showFavoriteIcon" (favoriteJob)="onFavoriteJob(job)"></app-job-info>
+    </div>
+</div>

@@ -16,12 +16,11 @@ export class JobInfoComponent {
   @Input() job!: Job;
   @Input() showFavoriteIcon!: boolean;
   @Output() favoriteJob = new EventEmitter<Job>();
-  @Output() unfavoriteJob = new EventEmitter<Job>();
 
   constructor() {}
 
   onClickFavoriteIcon(job: Job) {
     job.favorited = !job.favorited
-    this.favoriteJob?.emit(job);
+    this.favoriteJob!.emit(job);
   }
 }

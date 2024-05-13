@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { JobDataService } from '../../services/job-data.service';
@@ -17,19 +17,15 @@ import { LocalStorageService } from '../../services/local-storage.service';
   providers: [JobDataService]
 })
 export class JobListComponent implements OnInit {
-  @Input()
   jobs!: Job[];
-
   showFavoriteIcon: boolean = true;
 
   constructor(
     private localStorageService: LocalStorageService,
     private jobDataService: JobDataService
-    ) {};
+  ) {};
 
   ngOnInit(): void {
-    this.localStorageService.setItem('show-favorite-icon', 'true');
-
     if (this.localStorageService.getItem('jobs')) {
       this.jobs = JSON.parse(this.localStorageService.getItem('jobs') || '[]');
     } else {
@@ -39,7 +35,7 @@ export class JobListComponent implements OnInit {
     }
   }
 
-  onFavoriteJob(job: Job) {
+  onFavoriteJob() {
     this.localStorageService.setItem('jobs', JSON.stringify(this.jobs));
   }
 }

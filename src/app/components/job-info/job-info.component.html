@@ -2,8 +2,8 @@
   <div class="comp-logo">
   <img
     class="company-logo"
-    [src]=job?.companyLogo
-    [alt]=job?.companyName
+    [src]=job.companyLogo
+    [alt]=job.companyName
   >
   </div>
   <div class="col">
@@ -14,7 +14,7 @@
   <div class="fav-icon">
     <span *ngIf="showFavoriteIcon"
       class="icon-star"
-      [id]="'star-' + job?.id"
+      [id]="'star-' + job.id"
       [ngClass]="{active: job.favorited}"
       (click)="onClickFavoriteIcon(job)">
     </span>
